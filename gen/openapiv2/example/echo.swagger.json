@@ -1,0 +1,85 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "example/echo.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "EchoService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "exampleClientStreamingEchoResponse": {
+      "type": "object",
+      "properties": {
+        "messageCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "Total number of client messages that have been received."
+        }
+      },
+      "description": "Response type for client side streaming echo."
+    },
+    "exampleEchoResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "messageCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "exampleEmpty": {
+      "type": "object"
+    },
+    "exampleServerStreamingEchoResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "type": "string",
+          "description": "Response message."
+        }
+      },
+      "description": "Response type for server streaming response."
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    }
+  }
+}

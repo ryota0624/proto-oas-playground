@@ -1,0 +1,4 @@
+version: v1
+plugins:
+  - plugin: openapiv2
+    out: gen/openapiv2
